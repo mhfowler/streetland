@@ -7,13 +7,14 @@ $(document).ready(function() {
 
     $('.selectors').html(dots_string);
 
-    //$('a').click(function(e){
-    //    e.preventDefault();
-    //    var url = $(this).attr('href');
-    //    console.log('++ url: %s', url);
-    //    window.open(url, 'window name', 'toolbar=yes, menubar=yes, resizable=yes');
-    //    return false;
-    //});
+    $('img').click(function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        //console.log('++ url: %s', url);
+        //window.open(url, 'window name', 'toolbar=yes, menubar=yes, resizable=yes');
+        window.location = url;
+        return false;
+    });
 
 });
 
