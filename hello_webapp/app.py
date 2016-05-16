@@ -3,7 +3,7 @@ import sys
 import traceback
 import re, json
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask import jsonify, request
 
@@ -34,9 +34,30 @@ hello_helpers = get_hello_helpers_blueprint(db=db, template_dir=TEMPLATE_DIR)
 app.register_blueprint(hello_helpers)
 
 
+@app.route("/where/1/")
+def where1_page():
+    return render_template("fragment.html")
+
+@app.route("/where/2/")
+def where2_page():
+    return render_template("layout.html")
+
+
+@app.route("/where/3/")
+def where3_page():
+    return render_template("clean_room.html")
+
+
+@app.route("/room/<int:room_id>/")
+def room_page(room_id):
+    room_img = 'http://cdn-img2.streeteasy.com/nyc/image/26/200128526.jpg'
+    return render_template("room.html",
+                           room_img=room_img)
+
+
 @app.route("/")
 def hello_page():
-    return render_template("hello.html")
+    return redirect('/where/1/')
 
 
 @app.route('/static/<path:path>')

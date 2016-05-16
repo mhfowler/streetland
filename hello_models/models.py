@@ -2,6 +2,13 @@ from sqlalchemy import Column, Integer, String
 from hello_models.database import Base
 
 
+class Room(Base):
+    __tablename__ = 'room'
+    room_id = Column(Integer, primary_key=True)
+    building_link = Column(String(100))
+    floorplan_image_link = Column(String(100))
+
+
 class TestObject(Base):
     __tablename__ = 'test'
     id = Column(Integer, primary_key=True)

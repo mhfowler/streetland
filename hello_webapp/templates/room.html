@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        .main-wrapper {
+            width: 1500px;
+            position: absolute;
+        }
+        .room-img {
+            width:100%;
+        }
+        .selectors {
+            width: 100%;
+            position:absolute;
+            z-index: 1;
+            word-wrap:break-word;
+            top: 0px;
+            left: 0px;
+            color: rgba(0, 0, 0, 0);
+        }
+        .selectors::selection {
+            color: green;
+        }
+    </style>
+
+    <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+    <script src="/static/js/room.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="main-wrapper">
+    <img class="room-img" src="{{room_img}}"/>
+    <div class="selectors">
+    </div>
+</div>
+
+
+</body>
+</html>
